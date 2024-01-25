@@ -37,6 +37,24 @@ func getMovies(num int) string {
 		}
 	}
 
-	// t := strconv.Itoa(movies)
+	return "no movies"
+}
+
+func getMoviesWithRange(num int) string {
+	data := []int{1, 7, 3, 4, 8, 9}
+
+	movies := 0
+
+	for _, item1 := range data { // 2, 3
+		for _, item2 := range data { // 3, 4
+			movies = item1 + item2 // 10
+
+			if movies == num {
+				output := fmt.Sprintf("%v dan %v", item1, item2)
+				return output
+			}
+		}
+	}
+
 	return "no movies"
 }
